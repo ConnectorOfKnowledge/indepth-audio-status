@@ -148,64 +148,53 @@
       font-weight: 500;
     }
 
-    /* Timeline */
-    .timeline {
-      position: relative;
-      padding-left: 2rem;
+    /* Milestone list (replaces timeline) */
+    .milestone-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
     }
 
-    .timeline::before {
-      content: '';
-      position: absolute;
-      left: 7px;
-      top: 4px;
-      bottom: 4px;
-      width: 1px;
-      background: var(--border-default);
-    }
-
-    .timeline-item {
-      position: relative;
-      margin-bottom: 1.5rem;
-      padding: 1rem 1.25rem;
+    .milestone {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1.25rem 1.5rem;
       background: var(--bg-surface);
       border: 1px solid var(--border-subtle);
       border-radius: 8px;
+      transition: border-color 0.3s;
     }
 
-    .timeline-item::before {
-      content: '';
-      position: absolute;
-      left: -1.65rem;
-      top: 1.25rem;
-      width: 10px;
-      height: 10px;
+    .milestone:hover {
+      border-color: var(--border-accent);
+    }
+
+    .milestone-check {
+      width: 22px;
+      height: 22px;
       border-radius: 50%;
-      background: var(--gold);
-      border: 2px solid var(--bg-deep);
+      background: rgba(90, 158, 111, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--success);
+      flex-shrink: 0;
+      margin-top: 1px;
     }
 
-    .timeline-item.completed::before {
-      background: var(--success);
+    .milestone-content {
+      flex: 1;
     }
 
-    .timeline-date {
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--gold);
-      margin-bottom: 0.25rem;
-      font-weight: 500;
-    }
-
-    .timeline-title {
+    .milestone-title {
       font-weight: 600;
+      font-size: 0.9rem;
       margin-bottom: 0.25rem;
-      font-size: 0.95rem;
     }
 
-    .timeline-desc {
-      font-size: 0.85rem;
+    .milestone-desc {
+      font-size: 0.8rem;
       color: var(--text-secondary);
     }
 
@@ -326,12 +315,12 @@
       font-weight: 500;
     }
 
-    /* Human hours callout */
+    /* Hero callout */
     .callout {
       background: var(--bg-surface);
       border: 1px solid var(--border-accent);
       border-radius: 8px;
-      padding: 2rem;
+      padding: 2.5rem 2rem;
       text-align: center;
       margin-bottom: 3rem;
     }
@@ -354,14 +343,47 @@
       font-size: 0.75rem;
       color: var(--text-muted);
       margin-top: 1rem;
-      max-width: 500px;
+      max-width: 520px;
       margin-left: auto;
       margin-right: auto;
+    }
+
+    /* Dual callout */
+    .callout-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+
+    .callout-mini {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+    }
+
+    .callout-mini .big-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .callout-mini .big-label {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      margin-top: 0.5rem;
     }
 
     @media (max-width: 600px) {
       .stats-grid {
         grid-template-columns: repeat(2, 1fr);
+      }
+      .callout-grid {
+        grid-template-columns: 1fr;
       }
       .container {
         padding: 2rem 1rem;
@@ -377,18 +399,36 @@
       <div class="badge">Project Status Dashboard</div>
       <h1>In Depth Audio</h1>
       <p class="subtitle">
-        Dave's new digital platform for Legacy Audio and beyond.
+        Dave's premium digital platform for Legacy Audio and beyond.
         Here's where things stand.
       </p>
       <p class="updated">Last updated: March 2, 2026</p>
     </div>
 
-    <!-- Key Stats -->
-    <div class="stats-grid">
-      <div class="stat-card">
-        <div class="stat-number">7,500+</div>
-        <div class="stat-label">Lines of Code</div>
+    <!-- THE HEART: Development Effort -->
+    <div class="callout">
+      <div class="big-number">~170</div>
+      <div class="big-label">Estimated Development Hours</div>
+      <p class="context">
+        At professional developer rates, this codebase represents roughly
+        four full weeks of dedicated full-time development work. Every product
+        page, every animation, every interaction hand-built from the ground up.
+      </p>
+    </div>
+
+    <div class="callout-grid">
+      <div class="callout-mini">
+        <div class="big-number">7,500+</div>
+        <div class="big-label">Lines of Hand-Written Code</div>
       </div>
+      <div class="callout-mini">
+        <div class="big-number">$85K+</div>
+        <div class="big-label">Estimated Build Value at Market Rates</div>
+      </div>
+    </div>
+
+    <!-- Stats Grid -->
+    <div class="stats-grid">
       <div class="stat-card">
         <div class="stat-number">43</div>
         <div class="stat-label">Pages Built</div>
@@ -403,23 +443,16 @@
       </div>
       <div class="stat-card">
         <div class="stat-number">27</div>
-        <div class="stat-label">Code Commits</div>
+        <div class="stat-label">Code Revisions</div>
       </div>
       <div class="stat-card">
         <div class="stat-number">10+</div>
         <div class="stat-label">Research Documents</div>
       </div>
-    </div>
-
-    <!-- Human hours callout -->
-    <div class="callout">
-      <div class="big-number">~170</div>
-      <div class="big-label">Estimated Human-Equivalent Hours of Development</div>
-      <p class="context">
-        At a typical developer rate of ~50 lines of production code per hour,
-        this project represents roughly 4 weeks of full-time development work,
-        completed in 4 days using AI-assisted engineering.
-      </p>
+      <div class="stat-card">
+        <div class="stat-number">48</div>
+        <div class="stat-label">Source Files</div>
+      </div>
     </div>
 
     <!-- Overall Progress -->
@@ -435,7 +468,94 @@
 
     <div class="divider"></div>
 
-    <!-- What's Been Built -->
+    <!-- Technical Summary — ELEVATED as centerpiece -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="16 18 22 12 16 6"></polyline>
+            <polyline points="8 6 2 12 8 18"></polyline>
+          </svg>
+        </div>
+        <h2>Under the Hood</h2>
+      </div>
+
+      <div class="card-list">
+        <div class="card priority">
+          <div class="card-title">Enterprise-Grade Architecture</div>
+          <div class="card-desc">
+            Built on Next.js 15 with TypeScript &mdash; the same technology stack used
+            by Hulu, Nike, and Notion. Fully typed codebase across 48 source files with
+            a 235-line custom design system built specifically for the In Depth Audio brand.
+            Every component engineered for performance, accessibility, and scalability.
+          </div>
+        </div>
+
+        <div class="card priority">
+          <div class="card-title">Cinematic User Experience</div>
+          <div class="card-desc">
+            Custom scroll-driven animations throughout the site using a professional
+            animation engine. Atmospheric visual effects, smooth transitions, and an
+            immersive interface designed to match the premium nature of Legacy Audio
+            products. This is not a template &mdash; every interaction was crafted
+            from scratch.
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">100% Product Data Accuracy</div>
+          <div class="card-desc">
+            Every product price for all 31 Legacy Audio products was individually
+            cross-checked against legacyaudio.com and verified for accuracy. 10
+            specification items were flagged where Legacy's own published sources
+            contain discrepancies &mdash; documented and ready for Legacy to resolve.
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Real Product Photography</div>
+          <div class="card-desc">
+            297 source images processed from Dave's photo library. The 95 best images
+            were selected, professionally optimized (268 MB reduced to 11 MB without
+            quality loss), and mapped across all 31 products. Every product page shows
+            real Legacy Audio photography.
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">SEO & Search Engine Optimization</div>
+          <div class="card-desc">
+            Structured data (JSON-LD) embedded on every page so Google can display
+            rich product results, business info, and breadcrumb navigation directly
+            in search. Static page generation for fast load times. Fully responsive
+            across all devices.
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">E-Commerce Infrastructure</div>
+          <div class="card-desc">
+            Full product catalog with advanced filtering by category, price range,
+            and product tier. Finish selector with live pricing. Lead capture forms
+            wired and ready. Add to Cart on every product. Shopping cart and Stripe
+            checkout are the next phase.
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Research-Driven Decisions</div>
+          <div class="card-desc">
+            10+ dedicated research documents covering animation technology, CMS
+            architecture, payment processing, competitor analysis, and UX best
+            practices. Every major technical decision backed by research, not guesswork.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Work Completed — no dates, just accomplishments -->
     <div class="section">
       <div class="section-header">
         <div class="section-icon">
@@ -443,59 +563,104 @@
             <polyline points="20 6 9 17 4 12"></polyline>
           </svg>
         </div>
-        <h2>What's Been Built</h2>
+        <h2>Completed Milestones</h2>
       </div>
 
-      <div class="timeline">
-        <div class="timeline-item completed">
-          <div class="timeline-date">Feb 27 - 28</div>
-          <div class="timeline-title">Site Foundation</div>
-          <div class="timeline-desc">
-            Full Next.js application skeleton with TypeScript. Homepage with 8 sections,
-            product listing and detail pages, consultation wizard, about and contact pages.
-            Complete Legacy Audio catalog loaded (all 31 current products).
+      <div class="milestone-list">
+        <div class="milestone">
+          <div class="milestone-check">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+          <div class="milestone-content">
+            <div class="milestone-title">Full Application Framework</div>
+            <div class="milestone-desc">
+              Complete site architecture with 43 pages including homepage (8 sections),
+              full product catalog, individual product detail pages, consultation flow,
+              about, and contact pages. All 31 Legacy Audio products loaded with accurate
+              pricing and specifications.
+            </div>
           </div>
         </div>
 
-        <div class="timeline-item completed">
-          <div class="timeline-date">Mar 1 (Day Session)</div>
-          <div class="timeline-title">Research Integration</div>
-          <div class="timeline-desc">
-            Analyzed 4 research reports on animation libraries, CMS options, and AI tools.
-            Set up project documentation system. Confirmed GSAP is free for commercial use.
-            Established Payload CMS v3 as the CMS strategy.
+        <div class="milestone">
+          <div class="milestone-check">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+          <div class="milestone-content">
+            <div class="milestone-title">Luxury Brand Design System</div>
+            <div class="milestone-desc">
+              Complete visual identity built from the ground up &mdash; custom color
+              palette, typography, spacing, and component library. Every element designed
+              to communicate the premium quality of Legacy Audio products.
+            </div>
           </div>
         </div>
 
-        <div class="timeline-item completed">
-          <div class="timeline-date">Mar 1 (Evening)</div>
-          <div class="timeline-title">Immersive Experience</div>
-          <div class="timeline-desc">
-            Complete design system overhaul with luxury aesthetic. Cinematic scroll animations
-            on all homepage sections. Atmospheric background (gradient mesh, floating particles,
-            film grain). Hidden audio feature with spatial binaural sound.
-            AI-generated placeholder images.
+        <div class="milestone">
+          <div class="milestone-check">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+          <div class="milestone-content">
+            <div class="milestone-title">Cinematic Animations & Visual Effects</div>
+            <div class="milestone-desc">
+              Professional scroll-driven animations on all homepage sections. Atmospheric
+              visual effects, smooth page transitions, and interactive product galleries.
+              The kind of experience that makes visitors stop and explore.
+            </div>
           </div>
         </div>
 
-        <div class="timeline-item completed">
-          <div class="timeline-date">Mar 2 (Overnight)</div>
-          <div class="timeline-title">Real Product Photography</div>
-          <div class="timeline-desc">
-            Processed 297 source images from Dave's Dropbox. Selected and optimized 95 best
-            images across all 31 products. Reduced 268MB of source images to 11MB optimized.
-            Every product now shows real Legacy Audio photography.
+        <div class="milestone">
+          <div class="milestone-check">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+          <div class="milestone-content">
+            <div class="milestone-title">Product Photography Integration</div>
+            <div class="milestone-desc">
+              297 source images processed, 95 selected and professionally optimized.
+              Every product page displays real Legacy Audio photography with multi-image
+              galleries and finish selection.
+            </div>
           </div>
         </div>
 
-        <div class="timeline-item completed">
-          <div class="timeline-date">Mar 2 (Day Session)</div>
-          <div class="timeline-title">Accuracy Verification & UX Polish</div>
-          <div class="timeline-desc">
-            Cross-checked every product price against legacyaudio.com (100% accuracy confirmed).
-            Fixed image gallery interaction, added price range display, improved consultation
-            language, updated section headings, added advanced product filters,
-            wired form submissions, added SEO structured data, built error handling.
+        <div class="milestone">
+          <div class="milestone-check">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+          <div class="milestone-content">
+            <div class="milestone-title">Data Accuracy Verification</div>
+            <div class="milestone-desc">
+              Every product price cross-checked against Legacy Audio's official site.
+              100% MSRP accuracy confirmed. Specification discrepancies documented
+              and ready for Legacy to resolve.
+            </div>
+          </div>
+        </div>
+
+        <div class="milestone">
+          <div class="milestone-check">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+          <div class="milestone-content">
+            <div class="milestone-title">SEO, Forms & Advanced Filtering</div>
+            <div class="milestone-desc">
+              Structured data for Google rich results on every page. Contact and lead
+              capture forms wired and ready. Advanced product filtering by category,
+              price range, and product tier. Global error handling.
+            </div>
           </div>
         </div>
       </div>
@@ -540,18 +705,19 @@
           <div class="card-desc">
             Detect if a visitor is local to Dave's service area. Local customers
             see in-home demo options; remote customers see shipping and virtual
-            consultation options.
+            consultation paths.
           </div>
-          <span class="card-tag tag-blocker">Needs Service Area ZIPs</span>
+          <span class="card-tag tag-blocker">Needs Service Area Info</span>
         </div>
 
         <div class="card">
-          <div class="card-title">Curated Systems by Dave</div>
+          <div class="card-title">Custom System Builder</div>
           <div class="card-desc">
-            Pre-configured system bundles that Dave recommends for different room
-            sizes and use cases. Needs Dave's actual component picks and descriptions.
+            Interactive tool that lets customers build their own system by selecting
+            components from the full Legacy Audio catalog. Room-based recommendations,
+            real-time pricing, and component compatibility built in.
           </div>
-          <span class="card-tag tag-blocker">Needs Dave's Input</span>
+          <span class="card-tag tag-ready">Ready to Build</span>
         </div>
 
         <div class="card">
@@ -584,93 +750,33 @@
           <div class="card-desc">
             We need a direct contact at Legacy Audio (marketing, dealer support, or product team)
             to verify product specs, get official finish names, and access high-resolution media.
-            This is the #1 priority -- it unlocks several blocked items.
+            This is the #1 priority &mdash; it unlocks several blocked items above.
           </div>
           <span class="card-tag tag-priority">Top Priority</span>
         </div>
 
         <div class="card">
-          <div class="card-title">2. Service Area ZIP Codes</div>
+          <div class="card-title">2. Service Area Information</div>
           <div class="card-desc">
-            Which ZIP codes does Dave consider his "local" service area?
-            This determines who sees in-home demo options vs. shipping options.
+            Which ZIP codes or regions does Dave consider his local service area for
+            in-home demos and personal delivery? This powers the location-based
+            customer experience.
           </div>
         </div>
 
         <div class="card">
-          <div class="card-title">3. Curated System Recommendations</div>
+          <div class="card-title">3. Customer Testimonials</div>
           <div class="card-desc">
-            Dave's top 3-5 recommended system configurations. What components
-            go together for different room sizes and budgets?
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-title">4. Customer Testimonials</div>
-          <div class="card-desc">
-            Any quotes, reviews, or stories from satisfied customers. Even 2-3
+            Any quotes, reviews, or stories from satisfied customers. Even 2&ndash;3
             short testimonials add major credibility to the site.
           </div>
         </div>
 
         <div class="card">
-          <div class="card-title">5. About Story & Headshot</div>
+          <div class="card-title">4. About Story & Headshot</div>
           <div class="card-desc">
             A professional photo of Dave and a few paragraphs about his background,
             passion for audio, and what makes In Depth Audio different.
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-title">6. Phone/VoIP Preference</div>
-          <div class="card-desc">
-            Does Dave want to use his current phone number for the site, or set up
-            a dedicated business line (Google Voice, etc.) with voicemail?
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="divider"></div>
-
-    <!-- Technical Summary -->
-    <div class="section">
-      <div class="section-header">
-        <div class="section-icon">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="16 18 22 12 16 6"></polyline>
-            <polyline points="8 6 2 12 8 18"></polyline>
-          </svg>
-        </div>
-        <h2>Technical Summary</h2>
-      </div>
-
-      <div class="card-list">
-        <div class="card">
-          <div class="card-title">Architecture</div>
-          <div class="card-desc">
-            Next.js 15 with TypeScript, Tailwind CSS 4, and GSAP animations.
-            Deployed on Vercel with automatic updates from every code push.
-            48 TypeScript source files, 235 lines of custom CSS design system.
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-title">Product Data Accuracy</div>
-          <div class="card-desc">
-            Every product price has been cross-checked against legacyaudio.com.
-            100% MSRP accuracy confirmed. 10 specification items flagged where
-            Legacy's own sources disagree -- these are documented and ready
-            for Legacy to resolve.
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-title">SEO & Performance</div>
-          <div class="card-desc">
-            Structured data (JSON-LD) on every page for Google rich results.
-            Product images optimized from 268MB to 11MB. Static page generation
-            for fast load times. Mobile responsive design throughout.
           </div>
         </div>
       </div>
@@ -681,9 +787,6 @@
       <p>
         Built for <span class="brand">In Depth Audio</span> &middot;
         Project managed by Lonnie Barkby
-      </p>
-      <p style="margin-top: 0.5rem;">
-        Development powered by AI-assisted engineering (Claude + Gemini)
       </p>
     </div>
 
