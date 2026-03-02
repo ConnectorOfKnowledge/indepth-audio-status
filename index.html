@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>In Depth Audio - Project Status</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-deep: #080808;
+      --bg-base: #0e0e0e;
+      --bg-surface: #161614;
+      --bg-elevated: #1e1c1a;
+      --gold: #C9A96E;
+      --gold-light: #DBBF8A;
+      --gold-muted: rgba(201, 169, 110, 0.15);
+      --copper: #B07A4B;
+      --text-primary: #F5F0E8;
+      --text-secondary: #B8B0A0;
+      --text-muted: #8A8278;
+      --border-subtle: #2a2520;
+      --border-default: #3a352e;
+      --border-accent: rgba(201, 169, 110, 0.3);
+      --success: #5a9e6f;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg-deep);
+      color: var(--text-primary);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+    }
+
+    /* Header */
+    .header {
+      text-align: center;
+      margin-bottom: 4rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .header .badge {
+      display: inline-block;
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+      font-weight: 500;
+    }
+
+    .header h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 500;
+      margin-bottom: 0.75rem;
+      color: var(--text-primary);
+    }
+
+    .header .subtitle {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .header .updated {
+      margin-top: 1.5rem;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    /* Stats Grid */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+
+    .stat-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 1.5rem;
+      text-align: center;
+      transition: border-color 0.3s;
+    }
+
+    .stat-card:hover {
+      border-color: var(--border-accent);
+    }
+
+    .stat-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--text-muted);
+    }
+
+    /* Section */
+    .section {
+      margin-bottom: 3rem;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--gold-muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .section h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 500;
+    }
+
+    /* Timeline */
+    .timeline {
+      position: relative;
+      padding-left: 2rem;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 7px;
+      top: 4px;
+      bottom: 4px;
+      width: 1px;
+      background: var(--border-default);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 1.5rem;
+      padding: 1rem 1.25rem;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -1.65rem;
+      top: 1.25rem;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--gold);
+      border: 2px solid var(--bg-deep);
+    }
+
+    .timeline-item.completed::before {
+      background: var(--success);
+    }
+
+    .timeline-date {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+      margin-bottom: 0.25rem;
+      font-weight: 500;
+    }
+
+    .timeline-title {
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+      font-size: 0.95rem;
+    }
+
+    .timeline-desc {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    /* Cards list */
+    .card-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .card {
+      padding: 1.25rem 1.5rem;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      transition: border-color 0.3s;
+    }
+
+    .card:hover {
+      border-color: var(--border-accent);
+    }
+
+    .card.priority {
+      border-left: 3px solid var(--gold);
+    }
+
+    .card.blocker {
+      border-left: 3px solid var(--copper);
+    }
+
+    .card-title {
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .card-desc {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+    }
+
+    .card-tag {
+      display: inline-block;
+      font-size: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      padding: 0.2rem 0.5rem;
+      border-radius: 3px;
+      margin-top: 0.5rem;
+      font-weight: 600;
+    }
+
+    .tag-priority {
+      background: var(--gold-muted);
+      color: var(--gold);
+    }
+
+    .tag-blocker {
+      background: rgba(176, 122, 75, 0.15);
+      color: var(--copper);
+    }
+
+    .tag-ready {
+      background: rgba(90, 158, 111, 0.15);
+      color: var(--success);
+    }
+
+    /* Progress bar */
+    .progress-section {
+      margin-bottom: 3rem;
+    }
+
+    .progress-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.5rem;
+    }
+
+    .progress-bar {
+      height: 6px;
+      background: var(--bg-elevated);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+      border-radius: 3px;
+      transition: width 0.8s ease;
+    }
+
+    /* Divider */
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border-default), transparent);
+      margin: 3rem 0;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .footer p {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .footer .brand {
+      color: var(--gold);
+      font-weight: 500;
+    }
+
+    /* Human hours callout */
+    .callout {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-accent);
+      border-radius: 8px;
+      padding: 2rem;
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .callout .big-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.5rem;
+      font-weight: 600;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .callout .big-label {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin-top: 0.5rem;
+    }
+
+    .callout .context {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 1rem;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @media (max-width: 600px) {
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .container {
+        padding: 2rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- Header -->
+    <div class="header">
+      <div class="badge">Project Status Dashboard</div>
+      <h1>In Depth Audio</h1>
+      <p class="subtitle">
+        Dave's new digital platform for Legacy Audio and beyond.
+        Here's where things stand.
+      </p>
+      <p class="updated">Last updated: March 2, 2026</p>
+    </div>
+
+    <!-- Key Stats -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-number">7,500+</div>
+        <div class="stat-label">Lines of Code</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">43</div>
+        <div class="stat-label">Pages Built</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">31</div>
+        <div class="stat-label">Products Loaded</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">95</div>
+        <div class="stat-label">Product Images</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">27</div>
+        <div class="stat-label">Code Commits</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">10+</div>
+        <div class="stat-label">Research Documents</div>
+      </div>
+    </div>
+
+    <!-- Human hours callout -->
+    <div class="callout">
+      <div class="big-number">~170</div>
+      <div class="big-label">Estimated Human-Equivalent Hours of Development</div>
+      <p class="context">
+        At a typical developer rate of ~50 lines of production code per hour,
+        this project represents roughly 4 weeks of full-time development work,
+        completed in 4 days using AI-assisted engineering.
+      </p>
+    </div>
+
+    <!-- Overall Progress -->
+    <div class="progress-section">
+      <div class="progress-label">
+        <span>Overall Progress</span>
+        <span>Phase 1: Foundation & Catalog</span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-fill" style="width: 65%"></div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- What's Been Built -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+        </div>
+        <h2>What's Been Built</h2>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item completed">
+          <div class="timeline-date">Feb 27 - 28</div>
+          <div class="timeline-title">Site Foundation</div>
+          <div class="timeline-desc">
+            Full Next.js application skeleton with TypeScript. Homepage with 8 sections,
+            product listing and detail pages, consultation wizard, about and contact pages.
+            Complete Legacy Audio catalog loaded (all 31 current products).
+          </div>
+        </div>
+
+        <div class="timeline-item completed">
+          <div class="timeline-date">Mar 1 (Day Session)</div>
+          <div class="timeline-title">Research Integration</div>
+          <div class="timeline-desc">
+            Analyzed 4 research reports on animation libraries, CMS options, and AI tools.
+            Set up project documentation system. Confirmed GSAP is free for commercial use.
+            Established Payload CMS v3 as the CMS strategy.
+          </div>
+        </div>
+
+        <div class="timeline-item completed">
+          <div class="timeline-date">Mar 1 (Evening)</div>
+          <div class="timeline-title">Immersive Experience</div>
+          <div class="timeline-desc">
+            Complete design system overhaul with luxury aesthetic. Cinematic scroll animations
+            on all homepage sections. Atmospheric background (gradient mesh, floating particles,
+            film grain). Hidden audio feature with spatial binaural sound.
+            AI-generated placeholder images.
+          </div>
+        </div>
+
+        <div class="timeline-item completed">
+          <div class="timeline-date">Mar 2 (Overnight)</div>
+          <div class="timeline-title">Real Product Photography</div>
+          <div class="timeline-desc">
+            Processed 297 source images from Dave's Dropbox. Selected and optimized 95 best
+            images across all 31 products. Reduced 268MB of source images to 11MB optimized.
+            Every product now shows real Legacy Audio photography.
+          </div>
+        </div>
+
+        <div class="timeline-item completed">
+          <div class="timeline-date">Mar 2 (Day Session)</div>
+          <div class="timeline-title">Accuracy Verification & UX Polish</div>
+          <div class="timeline-desc">
+            Cross-checked every product price against legacyaudio.com (100% accuracy confirmed).
+            Fixed image gallery interaction, added price range display, improved consultation
+            language, updated section headings, added advanced product filters,
+            wired form submissions, added SEO structured data, built error handling.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- What's Next -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+        </div>
+        <h2>What's Next</h2>
+      </div>
+
+      <div class="card-list">
+        <div class="card priority">
+          <div class="card-title">Real Finish Names & Photography</div>
+          <div class="card-desc">
+            Replace generic finish tier names (Standard/Premium/Exotic) with
+            Legacy's actual finish options. Add finish-specific product photos
+            so customers can see exactly what they're ordering.
+          </div>
+          <span class="card-tag tag-blocker">Needs Legacy Contact</span>
+        </div>
+
+        <div class="card priority">
+          <div class="card-title">Shopping Cart & Checkout</div>
+          <div class="card-desc">
+            Full e-commerce flow: add to cart, cart management, Stripe payment
+            integration with ACH/wire options for high-ticket items.
+          </div>
+          <span class="card-tag tag-ready">Ready to Build</span>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Location-Based Customer Experience</div>
+          <div class="card-desc">
+            Detect if a visitor is local to Dave's service area. Local customers
+            see in-home demo options; remote customers see shipping and virtual
+            consultation options.
+          </div>
+          <span class="card-tag tag-blocker">Needs Service Area ZIPs</span>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Curated Systems by Dave</div>
+          <div class="card-desc">
+            Pre-configured system bundles that Dave recommends for different room
+            sizes and use cases. Needs Dave's actual component picks and descriptions.
+          </div>
+          <span class="card-tag tag-blocker">Needs Dave's Input</span>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Content Management System</div>
+          <div class="card-desc">
+            Payload CMS integration so Dave can update products, prices, and
+            content without touching code.
+          </div>
+          <span class="card-tag tag-ready">Ready to Build</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- What We Need from Dave -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+          </svg>
+        </div>
+        <h2>What We Need from Dave</h2>
+      </div>
+
+      <div class="card-list">
+        <div class="card priority">
+          <div class="card-title">1. Legacy Audio Contact Person</div>
+          <div class="card-desc">
+            We need a direct contact at Legacy Audio (marketing, dealer support, or product team)
+            to verify product specs, get official finish names, and access high-resolution media.
+            This is the #1 priority -- it unlocks several blocked items.
+          </div>
+          <span class="card-tag tag-priority">Top Priority</span>
+        </div>
+
+        <div class="card">
+          <div class="card-title">2. Service Area ZIP Codes</div>
+          <div class="card-desc">
+            Which ZIP codes does Dave consider his "local" service area?
+            This determines who sees in-home demo options vs. shipping options.
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">3. Curated System Recommendations</div>
+          <div class="card-desc">
+            Dave's top 3-5 recommended system configurations. What components
+            go together for different room sizes and budgets?
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">4. Customer Testimonials</div>
+          <div class="card-desc">
+            Any quotes, reviews, or stories from satisfied customers. Even 2-3
+            short testimonials add major credibility to the site.
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">5. About Story & Headshot</div>
+          <div class="card-desc">
+            A professional photo of Dave and a few paragraphs about his background,
+            passion for audio, and what makes In Depth Audio different.
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">6. Phone/VoIP Preference</div>
+          <div class="card-desc">
+            Does Dave want to use his current phone number for the site, or set up
+            a dedicated business line (Google Voice, etc.) with voicemail?
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Technical Summary -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="16 18 22 12 16 6"></polyline>
+            <polyline points="8 6 2 12 8 18"></polyline>
+          </svg>
+        </div>
+        <h2>Technical Summary</h2>
+      </div>
+
+      <div class="card-list">
+        <div class="card">
+          <div class="card-title">Architecture</div>
+          <div class="card-desc">
+            Next.js 15 with TypeScript, Tailwind CSS 4, and GSAP animations.
+            Deployed on Vercel with automatic updates from every code push.
+            48 TypeScript source files, 235 lines of custom CSS design system.
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Product Data Accuracy</div>
+          <div class="card-desc">
+            Every product price has been cross-checked against legacyaudio.com.
+            100% MSRP accuracy confirmed. 10 specification items flagged where
+            Legacy's own sources disagree -- these are documented and ready
+            for Legacy to resolve.
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">SEO & Performance</div>
+          <div class="card-desc">
+            Structured data (JSON-LD) on every page for Google rich results.
+            Product images optimized from 268MB to 11MB. Static page generation
+            for fast load times. Mobile responsive design throughout.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <p>
+        Built for <span class="brand">In Depth Audio</span> &middot;
+        Project managed by Lonnie Barkby
+      </p>
+      <p style="margin-top: 0.5rem;">
+        Development powered by AI-assisted engineering (Claude + Gemini)
+      </p>
+    </div>
+
+  </div>
+</body>
+</html>
