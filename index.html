@@ -148,7 +148,7 @@
       font-weight: 500;
     }
 
-    /* Milestone list (replaces timeline) */
+    /* Milestone list */
     .milestone-list {
       display: flex;
       flex-direction: column;
@@ -258,6 +258,16 @@
     }
 
     .tag-ready {
+      background: rgba(90, 158, 111, 0.15);
+      color: var(--success);
+    }
+
+    .tag-waiting {
+      background: rgba(100, 130, 180, 0.15);
+      color: #8AACCC;
+    }
+
+    .tag-done {
       background: rgba(90, 158, 111, 0.15);
       color: var(--success);
     }
@@ -402,16 +412,16 @@
         Dave's premium digital platform for Legacy Audio and beyond.
         Here's where things stand.
       </p>
-      <p class="updated">Last updated: March 5, 2026</p>
+      <p class="updated">Last updated: March 12, 2026</p>
     </div>
 
     <!-- THE HEART: Development Effort -->
     <div class="callout">
-      <div class="big-number">~210</div>
+      <div class="big-number">~230</div>
       <div class="big-label">Estimated Development Hours</div>
       <p class="context">
-        At professional developer rates, this codebase represents over
-        five full weeks of dedicated full-time development work. Every product
+        At professional developer rates, this codebase represents nearly
+        six full weeks of dedicated full-time development work. Every product
         page, every animation, every interaction hand-built from the ground up.
       </p>
     </div>
@@ -422,7 +432,7 @@
         <div class="big-label">Lines of Hand-Written Code</div>
       </div>
       <div class="callout-mini">
-        <div class="big-number">$105K+</div>
+        <div class="big-number">$115K+</div>
         <div class="big-label">Estimated Build Value at Market Rates</div>
       </div>
     </div>
@@ -430,7 +440,7 @@
     <!-- Stats Grid -->
     <div class="stats-grid">
       <div class="stat-card">
-        <div class="stat-number">47</div>
+        <div class="stat-number">60+</div>
         <div class="stat-label">Pages Built</div>
       </div>
       <div class="stat-card">
@@ -442,7 +452,7 @@
         <div class="stat-label">Product Images</div>
       </div>
       <div class="stat-card">
-        <div class="stat-number">48</div>
+        <div class="stat-number">50+</div>
         <div class="stat-label">Code Revisions</div>
       </div>
       <div class="stat-card">
@@ -462,13 +472,72 @@
         <span>Phase 1: Foundation & Catalog</span>
       </div>
       <div class="progress-bar">
-        <div class="progress-fill" style="width: 75%"></div>
+        <div class="progress-fill" style="width: 80%"></div>
       </div>
     </div>
 
     <div class="divider"></div>
 
-    <!-- Technical Summary — ELEVATED as centerpiece -->
+    <!-- Recent Activity -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+          </svg>
+        </div>
+        <h2>Latest Updates (March 12)</h2>
+      </div>
+
+      <div class="card-list">
+        <div class="card priority">
+          <div class="card-title">Finish System Overhaul</div>
+          <div class="card-desc">
+            Replaced generic finish tier names ("Standard Wood", "Premium Wood", "Exotic Wood")
+            with Legacy Audio's actual 12 named finishes plus Paint to Sample. Each product now
+            shows the real finish options customers can order. Masters Collection gets all 12
+            finishes; Performance Collection gets 3. Finish selector grouped by category with
+            live pricing.
+          </div>
+          <span class="card-tag tag-done">Complete</span>
+        </div>
+
+        <div class="card priority">
+          <div class="card-title">Legacy Audio Rep Contacted</div>
+          <div class="card-desc">
+            Email sent to Andy Swanson at Legacy Audio requesting updated product photography,
+            finish swatch images, resolution of 9 spec discrepancies, and product name
+            confirmations. Dave cc'd on all correspondence.
+          </div>
+          <span class="card-tag tag-waiting">Waiting on Reply</span>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Payment Processing Simplified</div>
+          <div class="card-desc">
+            Checkout streamlined to credit card only. Removed ACH/wire transfer tier system.
+            Dave's existing CardPointe merchant account will be used for direct API integration
+            (the old WordPress plugin is permanently closed). No processing fees shown to customer.
+          </div>
+          <span class="card-tag tag-done">Complete</span>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Dave's Dealer Paperwork</div>
+          <div class="card-desc">
+            Dave confirmed: Dover location is set, Glendale waiting on photos, AZ tax completed,
+            contract received and being filled out. Once complete, we'll follow up with Legacy
+            about getting Dave listed on their dealer locator page for referrals.
+          </div>
+          <span class="card-tag tag-waiting">In Progress</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Technical Summary -->
     <div class="section">
       <div class="section-header">
         <div class="section-icon">
@@ -485,30 +554,29 @@
           <div class="card-title">Enterprise-Grade Architecture</div>
           <div class="card-desc">
             Built on Next.js 15 with TypeScript &mdash; the same technology stack used
-            by Hulu, Nike, and Notion. Fully typed codebase across 48 source files with
+            by Hulu, Nike, and Notion. Fully typed codebase across 68 source files with
             a 235-line custom design system built specifically for the In Depth Audio brand.
             Every component engineered for performance, accessibility, and scalability.
           </div>
         </div>
 
         <div class="card priority">
-          <div class="card-title">Cinematic User Experience</div>
+          <div class="card-title">Phone-First Hybrid Strategy</div>
           <div class="card-desc">
-            Custom scroll-driven animations throughout the site using a professional
-            animation engine. Atmospheric visual effects, smooth transitions, and an
-            immersive interface designed to match the premium nature of Legacy Audio
-            products. This is not a template &mdash; every interaction was crafted
-            from scratch.
+            Strategically pivoted from traditional e-commerce to a credibility engine
+            designed to make Dave's phone ring with qualified buyers. Primary CTA is
+            consultation/call. Cart and checkout remain available, but the UX naturally
+            guides high-ticket buyers toward personal contact first.
           </div>
         </div>
 
         <div class="card">
           <div class="card-title">100% Product Data Accuracy</div>
           <div class="card-desc">
-            Every product price for all 31 Legacy Audio products was individually
-            cross-checked against legacyaudio.com and verified for accuracy. 10
-            specification items were flagged where Legacy's own published sources
-            contain discrepancies &mdash; documented and ready for Legacy to resolve.
+            Every product price for all 31 Legacy Audio products individually
+            cross-checked against legacyaudio.com and verified for accuracy. Finish
+            names matched to Legacy's own website. 9 specification discrepancies
+            flagged and sent to Legacy for resolution.
           </div>
         </div>
 
@@ -533,21 +601,11 @@
         </div>
 
         <div class="card">
-          <div class="card-title">E-Commerce Infrastructure</div>
+          <div class="card-title">Security Audit & Hardening</div>
           <div class="card-desc">
-            Full shopping cart, checkout flow, and order confirmation pipeline.
-            Advanced product filtering by category, price range, and product tier.
-            Finish selector with live pricing. Lead capture forms wired and
-            delivering to Google Sheets. Ready for Stripe payment integration.
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-title">Research-Driven Decisions</div>
-          <div class="card-desc">
-            10+ dedicated research documents covering animation technology, CMS
-            architecture, payment processing, competitor analysis, and UX best
-            practices. Every major technical decision backed by research, not guesswork.
+            Comprehensive 62-file code audit with all 20 findings resolved. API rate
+            limiting, input validation, GDPR cookie consent panel, webhook timeouts,
+            and PII protection. Enterprise-grade security practices throughout.
           </div>
         </div>
       </div>
@@ -555,7 +613,7 @@
 
     <div class="divider"></div>
 
-    <!-- Work Completed — no dates, just accomplishments -->
+    <!-- Work Completed -->
     <div class="section">
       <div class="section-header">
         <div class="section-icon">
@@ -576,10 +634,27 @@
           <div class="milestone-content">
             <div class="milestone-title">Full Application Framework</div>
             <div class="milestone-desc">
-              Complete site architecture with 43 pages including homepage (8 sections),
+              Complete site architecture with 60+ pages including homepage (8 sections),
               full product catalog, individual product detail pages, consultation flow,
               about, and contact pages. All 31 Legacy Audio products loaded with accurate
-              pricing and specifications.
+              pricing, specifications, and named finishes.
+            </div>
+          </div>
+        </div>
+
+        <div class="milestone">
+          <div class="milestone-check">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+          <div class="milestone-content">
+            <div class="milestone-title">Named Finish System</div>
+            <div class="milestone-desc">
+              12 individual Legacy Audio finishes plus Paint to Sample, matched
+              exactly to Legacy's own website. Grouped by Standard, Premium, Exotic,
+              and Paint to Sample categories with live pricing. Per-collection finish
+              lists (Masters: 12+PTS, Performance: 3).
             </div>
           </div>
         </div>
@@ -594,24 +669,8 @@
             <div class="milestone-title">Luxury Brand Design System</div>
             <div class="milestone-desc">
               Complete visual identity built from the ground up &mdash; custom color
-              palette, typography, spacing, and component library. Every element designed
-              to communicate the premium quality of Legacy Audio products.
-            </div>
-          </div>
-        </div>
-
-        <div class="milestone">
-          <div class="milestone-check">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="20 6 9 17 4 12"></polyline>
-            </svg>
-          </div>
-          <div class="milestone-content">
-            <div class="milestone-title">Cinematic Animations & Visual Effects</div>
-            <div class="milestone-desc">
-              Professional scroll-driven animations on all homepage sections. Atmospheric
-              visual effects, smooth page transitions, and interactive product galleries.
-              The kind of experience that makes visitors stop and explore.
+              palette, typography, spacing, and component library. Cinematic scroll-driven
+              animations throughout. Three visual themes: Listening Room, Gallery, and Studio.
             </div>
           </div>
         </div>
@@ -639,43 +698,11 @@
             </svg>
           </div>
           <div class="milestone-content">
-            <div class="milestone-title">Data Accuracy Verification</div>
-            <div class="milestone-desc">
-              Every product price cross-checked against Legacy Audio's official site.
-              100% MSRP accuracy confirmed. Specification discrepancies documented
-              and ready for Legacy to resolve.
-            </div>
-          </div>
-        </div>
-
-        <div class="milestone">
-          <div class="milestone-check">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="20 6 9 17 4 12"></polyline>
-            </svg>
-          </div>
-          <div class="milestone-content">
-            <div class="milestone-title">SEO, Forms & Advanced Filtering</div>
-            <div class="milestone-desc">
-              Structured data for Google rich results on every page. Contact and lead
-              capture forms wired and ready. Advanced product filtering by category,
-              price range, and product tier. Global error handling.
-            </div>
-          </div>
-        </div>
-
-        <div class="milestone">
-          <div class="milestone-check">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="20 6 9 17 4 12"></polyline>
-            </svg>
-          </div>
-          <div class="milestone-content">
             <div class="milestone-title">Shopping Cart & Checkout Flow</div>
             <div class="milestone-desc">
-              Full e-commerce pipeline: add-to-cart on every product, cart management,
-              customer checkout with shipping information, order confirmation with
-              next-steps timeline. Every product purchasable online with zero friction.
+              Full e-commerce pipeline with cart management, customer checkout,
+              order confirmation. Credit card processing via CardPointe (Dave's existing
+              merchant account). Strategic phone-first UX for high-ticket items.
             </div>
           </div>
         </div>
@@ -687,11 +714,11 @@
             </svg>
           </div>
           <div class="milestone-content">
-            <div class="milestone-title">System Builder with Preset Configurations</div>
+            <div class="milestone-title">Lead Funnel & Blog System</div>
             <div class="milestone-desc">
-              Interactive system builder with 5 preset configurations from Essentials
-              ($5K) to Reference ($100K+). Customers can explore complete audio systems
-              with real component picks and live pricing.
+              Lead capture forms, notification system, analytics tracking with GDPR consent
+              management. Blog with auto-generation and draft preview. Admin dashboard
+              for managing leads and content.
             </div>
           </div>
         </div>
@@ -703,27 +730,11 @@
             </svg>
           </div>
           <div class="milestone-content">
-            <div class="milestone-title">Theme Switcher & Visual Customization</div>
+            <div class="milestone-title">Security Audit & SEO</div>
             <div class="milestone-desc">
-              Three production-ready visual themes: Listening Room (warm dark),
-              Gallery (light cream), and Studio (cool blue-black). Visitors can
-              customize their browsing experience with instant theme switching.
-            </div>
-          </div>
-        </div>
-
-        <div class="milestone">
-          <div class="milestone-check">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="20 6 9 17 4 12"></polyline>
-            </svg>
-          </div>
-          <div class="milestone-content">
-            <div class="milestone-title">Security Audit & Hardening</div>
-            <div class="milestone-desc">
-              Comprehensive 62-file code audit with all 20 findings resolved. API rate
-              limiting, input validation, GDPR cookie consent panel, webhook timeouts,
-              and PII protection. Enterprise-grade security practices throughout.
+              Comprehensive code audit with all findings resolved. Structured data
+              for Google rich results. Static page generation for performance. Fully
+              responsive across all devices.
             </div>
           </div>
         </div>
@@ -746,52 +757,52 @@
 
       <div class="card-list">
         <div class="card priority">
-          <div class="card-title">Real Finish Names & Photography</div>
+          <div class="card-title">Finish Swatch Photography</div>
           <div class="card-desc">
-            Replace generic finish tier names (Standard/Premium/Exotic) with
-            Legacy's actual finish options. Add finish-specific product photos
-            so customers can see exactly what they're ordering.
+            Requested from Legacy Audio: official swatch images for all 12 finishes
+            so customers can see exactly what Black Pearl, Olive Ash Burl, Sapele
+            Pommele, and other exotic finishes look like before ordering.
           </div>
-          <span class="card-tag tag-blocker">Needs Legacy Contact</span>
+          <span class="card-tag tag-waiting">Waiting on Legacy</span>
         </div>
 
         <div class="card priority">
-          <div class="card-title">Stripe Payment Integration</div>
+          <div class="card-title">Consultation Page</div>
           <div class="card-desc">
-            Cart and checkout flow are built. Next step: wire Stripe for real
-            payment processing with ACH/wire options for high-ticket items.
-            The ACH option alone saves customers hundreds on large orders.
-          </div>
-          <span class="card-tag tag-blocker">Needs Stripe Account</span>
-        </div>
-
-        <div class="card">
-          <div class="card-title">Location-Based Customer Experience</div>
-          <div class="card-desc">
-            Detect if a visitor is local to Dave's service area. Local customers
-            see in-home demo options; remote customers see shipping and virtual
-            consultation paths.
-          </div>
-          <span class="card-tag tag-blocker">Needs Service Area Info</span>
-        </div>
-
-        <div class="card">
-          <div class="card-title">Custom System Builder</div>
-          <div class="card-desc">
-            Interactive tool that lets customers build their own system by selecting
-            components from the full Legacy Audio catalog. Room-based recommendations,
-            real-time pricing, and component compatibility built in.
+            All phone-first CTAs across the site now point to /consultation. This page
+            needs building: name, email, phone, products of interest, room description,
+            preferred callback time.
           </div>
           <span class="card-tag tag-ready">Ready to Build</span>
         </div>
 
         <div class="card">
-          <div class="card-title">Content Management System</div>
+          <div class="card-title">CardPointe Payment Integration</div>
           <div class="card-desc">
-            Payload CMS integration so Dave can update products, prices, and
-            content without touching code.
+            Dave has an existing CardPointe merchant account. Next step is contacting
+            his rep to get API credentials and wiring the checkout directly to
+            CardPointe's Gateway API.
+          </div>
+          <span class="card-tag tag-blocker">Needs API Credentials</span>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Blog Content Infrastructure</div>
+          <div class="card-desc">
+            30-article content plan ready for approval covering room acoustics,
+            product spotlights, and buyer education. MDX infrastructure, blog
+            index page, and post templates ready to build.
           </div>
           <span class="card-tag tag-ready">Ready to Build</span>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Email & SMS Notifications</div>
+          <div class="card-desc">
+            Brevo (email) and Twilio (SMS) integration for instant lead
+            notifications to Dave. Email nurture sequences for prospect follow-up.
+          </div>
+          <span class="card-tag tag-blocker">Needs Account Setup</span>
         </div>
       </div>
     </div>
@@ -811,17 +822,35 @@
 
       <div class="card-list">
         <div class="card priority">
-          <div class="card-title">1. Legacy Audio Contact Person</div>
+          <div class="card-title">1. Complete Legacy Paperwork</div>
           <div class="card-desc">
-            We need a direct contact at Legacy Audio (marketing, dealer support, or product team)
-            to verify product specs, get official finish names, and access high-resolution media.
-            This is the #1 priority &mdash; it unlocks several blocked items above.
+            Contract and Glendale location photos. Once filed, we can follow up with
+            Legacy about getting Dave listed on their dealer locator page for referrals.
+            Dover location is already set. AZ tax is taken care of.
           </div>
-          <span class="card-tag tag-priority">Top Priority</span>
+          <span class="card-tag tag-waiting">In Progress</span>
+        </div>
+
+        <div class="card priority">
+          <div class="card-title">2. Phone Number for the Site</div>
+          <div class="card-desc">
+            The entire site strategy centers on making Dave's phone ring. We have a
+            placeholder phone number in multiple locations that must be replaced before
+            launch.
+          </div>
+          <span class="card-tag tag-priority">Launch Blocker</span>
         </div>
 
         <div class="card">
-          <div class="card-title">2. Service Area Information</div>
+          <div class="card-title">3. Sales Policy Approval</div>
+          <div class="card-desc">
+            Draft sales policy ready for review with 5 questions for Dave on exact
+            wording for returns, warranties, and pricing terms.
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">4. Service Area Boundaries</div>
           <div class="card-desc">
             Which ZIP codes or regions does Dave consider his local service area for
             in-home demos and personal delivery? This powers the location-based
@@ -830,18 +859,10 @@
         </div>
 
         <div class="card">
-          <div class="card-title">3. Customer Testimonials</div>
+          <div class="card-title">5. Customer Testimonials & About Info</div>
           <div class="card-desc">
-            Any quotes, reviews, or stories from satisfied customers. Even 2&ndash;3
-            short testimonials add major credibility to the site.
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-title">4. About Story & Headshot</div>
-          <div class="card-desc">
-            A professional photo of Dave and a few paragraphs about his background,
-            passion for audio, and what makes In Depth Audio different.
+            Customer quotes/reviews and Dave's professional headshot and background
+            story for the About page. Even 2-3 short testimonials add major credibility.
           </div>
         </div>
       </div>
