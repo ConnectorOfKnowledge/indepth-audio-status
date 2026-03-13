@@ -412,7 +412,7 @@
         Dave's premium digital platform for Legacy Audio and beyond.
         Here's where things stand.
       </p>
-      <p class="updated">Last updated: March 12, 2026</p>
+      <p class="updated">Last updated: March 13, 2026</p>
     </div>
 
     <!-- THE HEART: Development Effort -->
@@ -487,23 +487,45 @@
             <polyline points="14 2 14 8 20 8"></polyline>
           </svg>
         </div>
-        <h2>Latest Updates (March 12)</h2>
+        <h2>Latest Updates (March 13)</h2>
       </div>
 
       <div class="card-list">
         <div class="card priority">
-          <div class="card-title">Finish System Overhaul</div>
+          <div class="card-title">CardPointe Payment Processing -- Fully Integrated</div>
           <div class="card-desc">
-            Replaced generic finish tier names ("Standard Wood", "Premium Wood", "Exotic Wood")
-            with Legacy Audio's actual 12 named finishes plus Paint to Sample. Each product now
-            shows the real finish options customers can order. Masters Collection gets all 12
-            finishes; Performance Collection gets 3. Finish selector grouped by category with
-            live pricing.
+            Complete payment processing integration using Dave's existing CardPointe merchant
+            account. PCI-compliant card tokenization via hosted iframe, secure server-side
+            authorization, capture, and void capabilities. Credit card processing fee
+            (2.99% + $0.30) displayed transparently to customers at checkout. All previous
+            Stripe code removed. Ready for production once credentials are added.
+          </div>
+          <span class="card-tag tag-done">Code Complete</span>
+        </div>
+
+        <div class="card priority">
+          <div class="card-title">Homepage Category Images -- Real Product Photography</div>
+          <div class="card-desc">
+            All 6 homepage product category cards now display real Legacy Audio product
+            photography: Focus XD (Speakers), Marquis XD (Center Channels), Silhouette
+            (On-Wall/Surrounds), Foundation (Subwoofers), i-V2 Ultra (Amplifiers), and
+            Wavelet II (Processors). Professional black backgrounds with full product
+            visibility.
           </div>
           <span class="card-tag tag-done">Complete</span>
         </div>
 
         <div class="card priority">
+          <div class="card-title">Homepage System Card Images -- Photorealistic Renders</div>
+          <div class="card-desc">
+            Three curated system preset cards on the homepage now feature photorealistic
+            room renders: The Essential (bookshelf listening setup), The Reference
+            (floorstanding speaker room), and The Statement (dedicated home theater).
+          </div>
+          <span class="card-tag tag-done">Complete</span>
+        </div>
+
+        <div class="card">
           <div class="card-title">Legacy Audio Rep Contacted</div>
           <div class="card-desc">
             Email sent to Andy Swanson at Legacy Audio requesting updated product photography,
@@ -511,16 +533,6 @@
             confirmations. Dave cc'd on all correspondence.
           </div>
           <span class="card-tag tag-waiting">Waiting on Reply</span>
-        </div>
-
-        <div class="card">
-          <div class="card-title">Payment Processing Simplified</div>
-          <div class="card-desc">
-            Checkout streamlined to credit card only. Removed ACH/wire transfer tier system.
-            Dave's existing CardPointe merchant account will be used for direct API integration
-            (the old WordPress plugin is permanently closed). No processing fees shown to customer.
-          </div>
-          <span class="card-tag tag-done">Complete</span>
         </div>
 
         <div class="card">
@@ -777,13 +789,13 @@
         </div>
 
         <div class="card">
-          <div class="card-title">CardPointe Payment Integration</div>
+          <div class="card-title">CardPointe Go-Live</div>
           <div class="card-desc">
-            Dave has an existing CardPointe merchant account. Next step is contacting
-            his rep to get API credentials and wiring the checkout directly to
-            CardPointe's Gateway API.
+            Code is complete. Production credentials received from CardPointe. Final
+            step: add credentials to the deployment environment. Sandbox testing
+            credentials requested from CardPointe rep Jeff Smith.
           </div>
-          <span class="card-tag tag-blocker">Needs API Credentials</span>
+          <span class="card-tag tag-waiting">Needs Env Setup</span>
         </div>
 
         <div class="card">
