@@ -412,12 +412,12 @@
         Dave's premium digital platform for Legacy Audio and beyond.
         Here's where things stand.
       </p>
-      <p class="updated">Last updated: March 13, 2026 (Session 22)</p>
+      <p class="updated">Last updated: March 14, 2026 (Session 23)</p>
     </div>
 
     <!-- THE HEART: Development Effort -->
     <div class="callout">
-      <div class="big-number">~230</div>
+      <div class="big-number">~240</div>
       <div class="big-label">Estimated Development Hours</div>
       <p class="context">
         At professional developer rates, this codebase represents nearly
@@ -428,11 +428,11 @@
 
     <div class="callout-grid">
       <div class="callout-mini">
-        <div class="big-number">12,400+</div>
+        <div class="big-number">13,600+</div>
         <div class="big-label">Lines of Hand-Written Code</div>
       </div>
       <div class="callout-mini">
-        <div class="big-number">$115K+</div>
+        <div class="big-number">$120K+</div>
         <div class="big-label">Estimated Build Value at Market Rates</div>
       </div>
     </div>
@@ -440,7 +440,7 @@
     <!-- Stats Grid -->
     <div class="stats-grid">
       <div class="stat-card">
-        <div class="stat-number">60+</div>
+        <div class="stat-number">62+</div>
         <div class="stat-label">Pages Built</div>
       </div>
       <div class="stat-card">
@@ -487,11 +487,57 @@
             <polyline points="14 2 14 8 20 8"></polyline>
           </svg>
         </div>
-        <h2>Latest Updates (March 13)</h2>
+        <h2>Latest Updates (March 14)</h2>
       </div>
 
       <div class="card-list">
         <div class="card priority">
+          <div class="card-title">Dave's Meeting Feedback -- 16+ Changes Implemented</div>
+          <div class="card-desc">
+            Hour-long video call with Dave reviewed the entire site. All feedback
+            implemented same day: removed worldwide shipping references (continental US only),
+            corrected product naming (Studio HD replaces Calibre as entry point, Aeris XD
+            no longer labeled flagship), fixed About page timeline with accurate dates from
+            Dave's own recollection, added scroll indicator, made scrollbar more visible,
+            added no-return policy notices on product and cart pages, and fixed broken links.
+          </div>
+          <span class="card-tag tag-done">Complete</span>
+        </div>
+
+        <div class="card priority">
+          <div class="card-title">In-Stock &amp; Ready to Ship -- New Feature</div>
+          <div class="card-desc">
+            Built a complete in-stock inventory system per Dave's request. Public page at
+            /in-stock shows what Dave currently has on hand. Admin panel at /admin/in-stock
+            lets Dave add items from a catalog dropdown (goes live immediately) or submit
+            manual entries for non-catalog products (creates a review ticket automatically).
+            Backed by Supabase with secure access controls.
+          </div>
+          <span class="card-tag tag-done">Complete</span>
+        </div>
+
+        <div class="card priority">
+          <div class="card-title">Finish Swatch Images -- Downloaded &amp; Saved</div>
+          <div class="card-desc">
+            All 12 Legacy Audio finish swatch images pulled from Dave's current WordPress
+            site before it goes offline. Standard (5), Premium (4), and Exotic (3) finishes
+            now stored in the new site's codebase, ready to integrate into product pages.
+          </div>
+          <span class="card-tag tag-done">Complete</span>
+        </div>
+
+        <div class="card priority">
+          <div class="card-title">Product Image Audit -- 3 Swapped to Dark Backgrounds</div>
+          <div class="card-desc">
+            Full audit of all 31 product image folders. Classic HD, Signature SE, and
+            Studio HD had white backgrounds -- swapped to dark-background alternatives
+            already in the repo. Four amplifier images (i-V3, i-V5, i-V6, i-V8) still
+            need proper product shots from Legacy.
+          </div>
+          <span class="card-tag tag-done">Complete</span>
+        </div>
+
+        <div class="card">
           <div class="card-title">Dave's Business Dashboard -- Live Analytics View</div>
           <div class="card-desc">
             Built a private analytics dashboard for Dave at /dashboard with 8 data sections:
@@ -814,23 +860,53 @@
 
       <div class="card-list">
         <div class="card priority">
-          <div class="card-title">Finish Swatch Photography</div>
+          <div class="card-title">Consignment / Pre-Owned Section</div>
           <div class="card-desc">
-            Requested from Legacy Audio: official swatch images for all 12 finishes
-            so customers can see exactly what Black Pearl, Olive Ash Burl, Sapele
-            Pommele, and other exotic finishes look like before ordering.
+            New section for pre-owned and consignment equipment from Dave's clients.
+            Includes a "Submit Your System for Consideration" lead form. Separate
+            from the main product catalog -- this is used gear on consignment.
           </div>
-          <span class="card-tag tag-waiting">Waiting on Legacy</span>
+          <span class="card-tag tag-ready">Ready to Build</span>
         </div>
 
         <div class="card priority">
-          <div class="card-title">Consultation Page</div>
+          <div class="card-title">Demo Equipment Page</div>
           <div class="card-desc">
-            All phone-first CTAs across the site now point to /consultation. This page
-            needs building: name, email, phone, products of interest, room description,
-            preferred callback time.
+            Page showing what equipment is available for in-store listening demos.
+            Helps customers know what they can hear before they visit.
           </div>
           <span class="card-tag tag-ready">Ready to Build</span>
+        </div>
+
+        <div class="card priority">
+          <div class="card-title">Investment Guide Admin Tool</div>
+          <div class="card-desc">
+            Admin page where Dave can pick which products appear in each of the
+            three system tiers (Essentials, Reference, Statement). Gives Dave
+            control over the Investment Guide without needing code changes.
+          </div>
+          <span class="card-tag tag-ready">Ready to Build</span>
+        </div>
+
+        <div class="card priority">
+          <div class="card-title">Finish Swatches on Product Pages</div>
+          <div class="card-desc">
+            12 Legacy Audio finish swatch images already downloaded and saved.
+            Need to integrate into the product detail pages so customers can
+            see available finishes. Waiting on Legacy to confirm current finish
+            availability and provide per-speaker finish photos if possible.
+          </div>
+          <span class="card-tag tag-waiting">Waiting on Legacy Confirmation</span>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Homepage System Card Images</div>
+          <div class="card-desc">
+            Dave requested that the three AI-generated system images (Essentials,
+            Reference, Statement) be replaced with real Legacy product photos.
+            Need to source appropriate images.
+          </div>
+          <span class="card-tag tag-waiting">Needs Real Photos</span>
         </div>
 
         <div class="card">
@@ -841,25 +917,6 @@
             credentials requested from CardPointe rep Jeff Smith.
           </div>
           <span class="card-tag tag-waiting">Needs Env Setup</span>
-        </div>
-
-        <div class="card">
-          <div class="card-title">Blog Content Infrastructure</div>
-          <div class="card-desc">
-            30-article content plan ready for approval covering room acoustics,
-            product spotlights, and buyer education. MDX infrastructure, blog
-            index page, and post templates ready to build.
-          </div>
-          <span class="card-tag tag-ready">Ready to Build</span>
-        </div>
-
-        <div class="card">
-          <div class="card-title">Email & SMS Notifications</div>
-          <div class="card-desc">
-            Brevo (email) and Twilio (SMS) integration for instant lead
-            notifications to Dave. Email nurture sequences for prospect follow-up.
-          </div>
-          <span class="card-tag tag-blocker">Needs Account Setup</span>
         </div>
       </div>
     </div>
