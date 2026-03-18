@@ -412,27 +412,27 @@
         Dave's premium digital platform for Legacy Audio and beyond.
         Here's where things stand.
       </p>
-      <p class="updated">Last updated: March 14, 2026 (Session 25)</p>
+      <p class="updated">Last updated: March 18, 2026 (Session 27)</p>
     </div>
 
     <!-- THE HEART: Development Effort -->
     <div class="callout">
-      <div class="big-number">~260</div>
+      <div class="big-number">~280</div>
       <div class="big-label">Estimated Development Hours</div>
       <p class="context">
         At professional developer rates, this codebase represents over
-        six full weeks of dedicated full-time development work. Every product
+        seven full weeks of dedicated full-time development work. Every product
         page, every animation, every interaction hand-built from the ground up.
       </p>
     </div>
 
     <div class="callout-grid">
       <div class="callout-mini">
-        <div class="big-number">15,000+</div>
+        <div class="big-number">16,000+</div>
         <div class="big-label">Lines of Hand-Written Code</div>
       </div>
       <div class="callout-mini">
-        <div class="big-number">$130K+</div>
+        <div class="big-number">$140K+</div>
         <div class="big-label">Estimated Build Value at Market Rates</div>
       </div>
     </div>
@@ -472,7 +472,7 @@
         <span>Phase 1: Foundation & Catalog</span>
       </div>
       <div class="progress-bar">
-        <div class="progress-fill" style="width: 95%"></div>
+        <div class="progress-fill" style="width: 97%"></div>
       </div>
     </div>
 
@@ -487,67 +487,76 @@
             <polyline points="14 2 14 8 20 8"></polyline>
           </svg>
         </div>
-        <h2>Latest Updates (Session 25 -- March 14)</h2>
+        <h2>Latest Updates (Session 27 -- March 18)</h2>
       </div>
 
       <div class="card-list">
         <div class="card priority">
-          <div class="card-title">Consignment Photo Uploads -- Drag-and-Drop on Both Forms</div>
+          <div class="card-title">Official Legacy Audio Spec Sheets</div>
           <div class="card-desc">
-            Both the public consignment submission form and the admin consignment form now
-            require photo uploads. Drag-and-drop interface with image previews, stored in
-            Supabase Storage. Customers can show what they're consigning, and Dave can add
-            photos when listing items from the admin side.
+            Official Legacy Audio spec sheets split into 20 per-product PDFs and linked
+            on every product page. Customers can download manufacturer specifications
+            directly from the site.
           </div>
           <span class="card-tag tag-done">Complete</span>
         </div>
 
         <div class="card priority">
-          <div class="card-title">Email Notifications on Consignment Submissions</div>
+          <div class="card-title">Real Finish Swatches &amp; Product Photography</div>
           <div class="card-desc">
-            Dave now receives an email notification via Brevo whenever someone submits a
-            consignment request. Brevo domain authentication fully verified (DKIM, DMARC)
-            so emails land in Dave's inbox, not spam.
+            12 finish swatch images from Legacy integrated into the finish selector with
+            real wood grain thumbnails. 18 official product images from Andy Swanson
+            optimized and added to the gallery. Homepage and systems page images replaced
+            with official Legacy photography.
           </div>
           <span class="card-tag tag-done">Complete</span>
         </div>
 
         <div class="card priority">
-          <div class="card-title">Dashboard Hub / CRM / Task Manager -- Verified Complete</div>
+          <div class="card-title">Full Codebase Audit -- Zero Critical Issues</div>
           <div class="card-desc">
-            Full business dashboard with CRM contact management and task manager verified
-            as complete and working. Vercel cron job configured for daily task reminder
-            notifications so Dave never misses a follow-up.
+            Comprehensive codebase audit across 4 parallel audits found zero critical
+            issues. Site is production-ready from a code quality standpoint.
           </div>
           <span class="card-tag tag-done">Complete</span>
         </div>
 
         <div class="card">
-          <div class="card-title">Demo Room Removed from Navigation</div>
+          <div class="card-title">CardPointe Payment Fix</div>
           <div class="card-desc">
-            Demo Room page removed from site navigation per project cleanup. Streamlines
-            the visitor experience and keeps the nav focused on active features.
+            Payment processing was hitting the production endpoint with UAT credentials.
+            Fixed to use the correct environment configuration.
           </div>
           <span class="card-tag tag-done">Complete</span>
         </div>
 
         <div class="card">
-          <div class="card-title">Security Fix -- Debug Code Cleaned Up</div>
+          <div class="card-title">Audio &amp; UX Polish</div>
           <div class="card-desc">
-            Debug/test code removed from the test-payment route. Security hardening
-            to ensure no development artifacts make it to production.
+            Audio crackling fixed with HRTF headroom and smooth gain transitions.
+            Spatial audio effect strengthened for more noticeable binaural movement.
+            Scrollbar visibility improved on dark theme.
           </div>
           <span class="card-tag tag-done">Complete</span>
         </div>
 
-        <div class="card priority">
-          <div class="card-title">Go-Live Target: Tuesday</div>
+        <div class="card">
+          <div class="card-title">Product Data Corrections</div>
           <div class="card-desc">
-            Site is feature-complete and waiting on a few external items before launch.
-            Target go-live date is Tuesday, pending CardPointe IP whitelisting, Dave
-            confirming notification emails work, and Legacy Audio product photos.
+            Marquis XD renamed to Marquis per Legacy Audio confirmation. Aeris XD
+            "flagship" wording corrected and delivery language updated. Testimonials
+            section removed while waiting on real customer reviews.
           </div>
-          <span class="card-tag tag-waiting">Waiting on External Input</span>
+          <span class="card-tag tag-done">Complete</span>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Email &amp; Payment Verification</div>
+          <div class="card-desc">
+            Brevo email notifications confirmed working -- Dave received test email.
+            Fiserv contacted about UAT certification for payment processing.
+          </div>
+          <span class="card-tag tag-done">Complete</span>
         </div>
       </div>
     </div>
@@ -807,32 +816,30 @@
 
       <div class="card-list">
         <div class="card blocker">
-          <div class="card-title">CardPointe IP Whitelisting</div>
+          <div class="card-title">Domain Switchover</div>
           <div class="card-desc">
-            Waiting on Jeff Smith at CardPointe to whitelist the Vercel deployment
-            IP addresses so payment processing works in production. Code is fully
-            integrated and tested -- this is the last technical blocker.
-          </div>
-          <span class="card-tag tag-blocker">Waiting on Jeff Smith</span>
-        </div>
-
-        <div class="card blocker">
-          <div class="card-title">Dave Confirming Notification Emails</div>
-          <div class="card-desc">
-            Brevo email notifications are configured and domain-authenticated. Dave
-            needs to confirm he's receiving the consignment submission and task
-            reminder emails in his inbox.
+            Site is ready to go live at indepthaudio.com. Pending Dave's approval
+            to switch the domain from the old WordPress site to the new platform.
           </div>
           <span class="card-tag tag-blocker">Waiting on Dave</span>
         </div>
 
-        <div class="card">
-          <div class="card-title">Legacy Audio Product Photos</div>
+        <div class="card blocker">
+          <div class="card-title">Fiserv UAT Certification</div>
           <div class="card-desc">
-            A few products still need proper product photography from Legacy Audio.
-            Waiting on updated images to replace placeholders before launch.
+            Fiserv has been contacted about UAT certification for payment processing.
+            This is required to move from test mode to live transactions.
           </div>
-          <span class="card-tag tag-waiting">Waiting on Legacy</span>
+          <span class="card-tag tag-waiting">In Progress</span>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Overnight Automated Audits</div>
+          <div class="card-desc">
+            Automated audit system running overnight to continuously monitor
+            site health, performance, and code quality.
+          </div>
+          <span class="card-tag tag-ready">Running</span>
         </div>
       </div>
     </div>
@@ -852,40 +859,32 @@
 
       <div class="card-list">
         <div class="card priority">
-          <div class="card-title">1. Confirm Notification Emails Are Working</div>
+          <div class="card-title">1. Approval to Switch indepthaudio.com to the New Site</div>
           <div class="card-desc">
-            Brevo email notifications are live and domain-authenticated. Dave needs to
-            confirm he's receiving consignment submission alerts and daily task reminders
-            in his inbox (not spam).
+            The new site is ready. Dave needs to give the go-ahead to point the
+            indepthaudio.com domain to the new platform, replacing the old
+            WordPress/WooCommerce site.
           </div>
           <span class="card-tag tag-priority">Launch Blocker</span>
         </div>
 
         <div class="card priority">
-          <div class="card-title">2. Legacy Audio Product Photos</div>
+          <div class="card-title">2. High-Res Photos for About Page</div>
           <div class="card-desc">
-            A few products still need proper product photography. Need images from
-            Legacy Audio to replace remaining placeholders before go-live.
+            Need a professional headshot and workshop/showroom photos for the About
+            page. These add credibility and help customers connect with Dave personally.
           </div>
-          <span class="card-tag tag-waiting">Waiting on Legacy</span>
-        </div>
-
-        <div class="card priority">
-          <div class="card-title">3. Complete Legacy Paperwork</div>
-          <div class="card-desc">
-            Contract and Glendale location photos. Once filed, we can follow up with
-            Legacy about getting Dave listed on their dealer locator page for referrals.
-            Dover location is already set. AZ tax is taken care of.
-          </div>
-          <span class="card-tag tag-waiting">In Progress</span>
+          <span class="card-tag tag-waiting">Waiting on Dave</span>
         </div>
 
         <div class="card">
-          <div class="card-title">4. Customer Testimonials &amp; About Info</div>
+          <div class="card-title">3. Real Customer Testimonials</div>
           <div class="card-desc">
-            Customer quotes/reviews and Dave's professional headshot and background
-            story for the About page. Even 2-3 short testimonials add major credibility.
+            Testimonials section has been removed until real customer reviews are
+            available. Even 2-3 short quotes from satisfied customers would add
+            major credibility to the site.
           </div>
+          <span class="card-tag tag-waiting">When Available</span>
         </div>
       </div>
     </div>
